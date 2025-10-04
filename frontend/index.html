@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TurfSpark</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+ <header class="header">
+  <div class="logo">TurfSpark</div>
+  <nav>
+    <a href="#why">Why Us</a>
+    <a href="auth.html?tab=login" id="loginLink">Login</a>
+    <a href="auth.html?tab=register" id="registerLink">Register</a>
+
+    <!-- Profile dropdown, hidden by default -->
+    <div id="profileDropdown" class="profile-dropdown" style="display:none;">
+      <i class="fa fa-user-circle"></i>
+      <div class="dropdown-content">
+        <p id="userName"></p>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#" id="logoutBtn">Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Book Your Turf Instantly</h1>
+    <p>Find and book turfs near you with ease, or manage your turf location.</p>
+    <a href="auth.html#register" class="btn">Get Started</a>
+  </section>
+
+<!-- Why Us Section -->
+<section id="why" class="why-us">
+  <h2>Why TurfSpark?</h2>
+  <div class="features">
+    <div class="feature">
+      <h3>⚡ Easy Booking</h3>
+      <p>Book turfs in just a few clicks.</p>
+    </div>
+    <div class="feature">
+      <h3>📊 Manage Turfs</h3>
+      <p>Turf managers can add and track bookings efficiently.</p>
+    </div>
+    <div class="feature">
+      <h3>💰 Affordable Pricing</h3>
+      <p>Compare prices and get the best deals for your turf sessions.</p>
+    </div>
+    <div class="feature">
+      <h3>🏆 Verified Turfs</h3>
+      <p>All turfs are verified for quality and safety.</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- Manager Dashboard -->
+  <section id="managerSection" style="display:none;">
+    <h2>Manager Dashboard</h2>
+    <form id="addTurfForm" class="card" enctype="multipart/form-data">
+  <h3>Add New Turf</h3>
+  <div class="input-group">
+    <label for="turfName">Turf Name</label>
+    <input type="text" id="turfName" name="turfName" required>
+  </div>
+  <div class="input-group">
+    <label for="turfLocation">Location</label>
+    <input type="text" id="turfLocation" name="turfLocation" required>
+  </div>
+  <div class="input-group">
+    <label for="turfPrice">Price per Hour</label>
+    <input type="number" id="turfPrice" name="turfPrice" required>
+  </div>
+  <button type="submit" class="btn" href="./addturf.html">Add Turf</button>
+</form>
+
+
+    <div class="card">
+      <h3>Pending Bookings</h3>
+      <div id="pendingBookings"></div>
+    </div>
+  </section>
+
+  <!-- Customer Dashboard -->
+  <section id="customerSection" style="display:none;">
+    <h2>Available Turfs</h2>
+    <div id="map" style="height:70vh;"></div>
+
+    <div id="turfList" class="card">
+      <!-- Turfs dynamically loaded -->
+    </div>
+  </section>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About -->
+    <div class="footer-section">
+      <h3>About TurfSpark</h3>
+      <p>Your go-to platform for booking and managing sports turfs easily.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-section">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="auth.html?tab=login">Login</a></li>
+        <li><a href="auth.html?tab=register">Register</a></li>
+        <li><a href="#">FAQs</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <p>Email: info@turfspark.com</p>
+      <p>Phone: +91 12345 67890</p>
+      <p>Address: Mumbai, India</p>
+    </div>
+
+    <!-- Newsletter -->
+    <div class="footer-section">
+      <h3>Newsletter</h3>
+      <p>Subscribe for latest updates & offers</p>
+      <form>
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 TurfSpark. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="#">&#x1F30E;</a>
+      <a href="#">&#x1F426;</a>
+      <a href="#">&#x1F4F1;</a>
+    </div>
+  </div>
+</footer>
+
+  <script src="app.js"></script>
+  <script src="turf.js"></script>
+</body>
+</html>
